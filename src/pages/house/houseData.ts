@@ -27,31 +27,16 @@ const houseData: IHouseDataSQL[] = [
   { date: '2022/3/2', districtType: 1, houseType: 2, count: 389, area: 35727.22 },
   { date: '2022/3/2', districtType: 2, houseType: 2, count: 100, area: 9485.33 },
 
-  { date: '2022/3/3', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
-  { date: '2022/3/3', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
-  { date: '2022/3/3', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
-  { date: '2022/3/3', districtType: 2, houseType: 2, count: 93, area: 8688.78 },
+  { date: '2022/3/3', districtType: 1, houseType: 1, count: 607, area: 82810.18 },
+  { date: '2022/3/3', districtType: 2, houseType: 1, count: 121, area: 11600.25 },
+  { date: '2022/3/3', districtType: 1, houseType: 2, count: 436, area: 39530.86 },
+  { date: '2022/3/3', districtType: 2, houseType: 2, count: 92, area: 9690.60 },
 
-  { date: '2022/3/4', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
-  { date: '2022/3/4', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
-  { date: '2022/3/4', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
-  { date: '2022/3/4', districtType: 2, houseType: 2, count: 93, area: 8688.78 },
-
-  { date: '2022/3/5', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
-  { date: '2022/3/5', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
-  { date: '2022/3/5', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
-  { date: '2022/3/5', districtType: 2, houseType: 2, count: 93, area: 8688.78 },
-
-  { date: '2022/3/6', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
-  { date: '2022/3/6', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
-  { date: '2022/3/6', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
-  { date: '2022/3/6', districtType: 2, houseType: 2, count: 93, area: 8688.78 },
-
-  { date: '2022/3/7', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
-  { date: '2022/3/7', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
-  { date: '2022/3/7', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
-  { date: '2022/3/7', districtType: 2, houseType: 2, count: 93, area: 8688.78 },
-
+  { date: '2022/3/7', districtType: 1, houseType: 1, count: 535, area: 73408.56 },
+  { date: '2022/3/7', districtType: 2, houseType: 1, count: 128, area: 14418.45 },
+  { date: '2022/3/7', districtType: 1, houseType: 2, count: 525, area: 47374.77 },
+  { date: '2022/3/7', districtType: 2, houseType: 2, count: 102, area: 10305.66 },
+/** TODO： 未更新*/
   { date: '2022/3/8', districtType: 1, houseType: 1, count: 494, area: 62866.67 },
   { date: '2022/3/8', districtType: 2, houseType: 1, count: 110, area: 12297.47 },
   { date: '2022/3/8', districtType: 1, houseType: 2, count: 324, area: 30622.21 },
