@@ -6,7 +6,7 @@ import { Form, Input, Modal } from 'antd';
 import { RuleObject, StoreValue } from 'rc-field-form/lib/interface.d';
 
 
-import { ITableItem, IFormData } from '@/types/whoisIPWhiteList.d';
+import { ITableItem, SubmitFormData } from '@/types/whoisIPWhiteList.d';
 import { FormattedMessage, getLocale } from '@@/plugin-locale/localeExports';
 import { isIPv4, isSameIPV4Segment } from '@/utils/http/IP';
 
@@ -28,7 +28,7 @@ const CreateForm: FC<PageInit> = (
    }) => {
     const { formatMessage } = useIntl();
     const [submitting, setSubmitting] = useState(false);
-    const [formData, setFromData] = useState<IFormData>({
+    const [formData, setFromData] = useState<SubmitFormData>({
       startIp: '',
       endIp: '',
     });
