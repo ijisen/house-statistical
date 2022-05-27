@@ -3,10 +3,8 @@
  *
  * */
 import React, { FC, useEffect, useState } from 'react';
-import { FormattedMessage, history, useIntl } from 'umi';
-import { Button, Layout, message as $Message, Modal, PageHeader } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
-import classNames from 'classnames';
+import { FormattedMessage, useIntl } from 'umi';
+import { Button, Layout, message as $Message, PageHeader } from 'antd';
 
 /** 自定义函数 */
 import assertObject from '@/utils/base/assertObject';
@@ -20,11 +18,7 @@ import AddFormComponent from './_component/AddFormComponent';
 
 /** type 类申明 */
 import { EnumDictKey } from '@/types/basic.d';
-import { ITableItem, TableData } from '@/types/whoisIPWhiteList.d';
-
-/** 自定义样式 */
-import style from './style.less';
-import { utilUpdateTableItemInfo } from '@/utils/commont_rely';
+import { ITableItem, TableData } from '@/types/houseType.d';
 
 
 const PageContent: FC = (props) => {
@@ -62,7 +56,6 @@ const PageContent: FC = (props) => {
   };
 
 
-
   /** 操作栏按钮点击事件 */
   const handleOptBtnClick = (role: EnumDictKey, data?: ITableItem[]) => {
     console.log(`handleOptBtnClick Role:  ${role}`);
@@ -80,7 +73,7 @@ const PageContent: FC = (props) => {
   const handleTableClick = (role: EnumDictKey, record: ITableItem) => {
     switch (role) {
       case EnumDictKey.DELETE:
-        console.log('EnumDictKey.DELETE')
+        console.log('EnumDictKey.DELETE');
         break;
       default:
         console.log(`undefined Role ${role}`);
@@ -91,16 +84,13 @@ const PageContent: FC = (props) => {
     getTableData();
   }, []);
   return (
-    <Layout className={classNames('zdns-page-layout', style.IPWhiteList)} style={{ minWidth: 400 }}>
+    <Layout className="zdns-page-layout" style={{ minHeight: '100vh' }}>
       <Layout.Content>
-        <PageHeader
-          onBack={() => history.goBack()}
-          title={formatMessage({ id: 'menu.whois.whiteList' })}
-        />
+        <PageHeader title={formatMessage({ id: 'menu.house.table' })} />
         {/**  操作栏按钮  */}
-        <div className="page-opt-btn-group">
+        <div className="pbl">
           <Button className="mrs" onClick={() => handleOptBtnClick(EnumDictKey.CREATE)}>
-            <FormattedMessage id="whois.whiteList.create" />
+            <FormattedMessage id="keywords.add" />
           </Button>
         </div>
 
@@ -113,7 +103,7 @@ const PageContent: FC = (props) => {
 
         {/** 新增白名单 */}
         <AddFormComponent visible={createModalVisible}
-                            changeModalVisible={setCreateModalVisible} />
+                          changeModalVisible={setCreateModalVisible} />
 
       </Layout.Content>
     </Layout>

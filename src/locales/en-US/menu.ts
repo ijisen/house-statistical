@@ -1,10 +1,12 @@
 export default {
+  'menu.home': 'Home',
+
   'menu.user': 'User',
   'menu.user.login': 'Login',
 
-  'menu.house': 'house',
-  'menu.house.volume': 'volume',
-  'menu.house.import': 'Import',
+  'menu.house': 'House',
+  'menu.house.volume': 'Volume',
+  'menu.house.table': 'Table',
 
   'menu.exception.403': '403',
   'menu.exception.404': '404',

@@ -1,4 +1,5 @@
 import menu from './en-US/menu';
+import keywords from './en-US/keywords';
 
 
 export default {
@@ -9,4 +10,5 @@ export default {
   'layout.user.link.privacy': 'Privacy',
   'layout.user.link.terms': 'Terms',
   ...menu,
+  ...keywords,
 };

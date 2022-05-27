@@ -47,6 +47,7 @@ export const layout = ({
     // 是否删除掉所有的自带界面
     // pure: true,
     siderWidth: 180,
+    className: 'zdns-basic-layout',
     loading: false,
     layout: 'mix',
     navTheme: 'light',

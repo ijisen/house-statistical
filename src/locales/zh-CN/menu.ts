@@ -1,10 +1,12 @@
 export default {
+  'menu.home': '首页',
+
   'menu.user': '登录',
   'menu.user.login': '登录',
 
-  'menu.house': 'house',
+  'menu.house': 'House',
   'menu.house.volume': '成交量',
-  'menu.house.import': 'Import',
+  'menu.house.table': 'Table',
 
   'menu.exception.403': '403',
   'menu.exception.404': '404',

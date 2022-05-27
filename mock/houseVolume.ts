@@ -4,16 +4,10 @@
  * */
 import { Request, Response } from 'express';
 
+import houseData from '../src/houseData';
+
 const tableListData = () => {
-  let arr = [];
-  for (let i = 1; i < 11; i++) {
-    arr.push({
-      id: i,
-      startIp: `192.168.1.1${i}`,
-      endIp: `192.168.1.2${i}`,
-    });
-  }
-  return arr;
+  return houseData.map((item, index) => ({ id: index, ...item }));
 };
 export default {
   // 列表数据获取
@@ -21,12 +15,12 @@ export default {
     res.send({
       success: true,
       code: 1000,
-      message: '请求成功',
+      message: '请求 成功',
       timestamp: 1648517225939,
       data: {
         pageNumber: 1,
         pageSize: 500,
-        list: tableListData()
+        list: tableListData(),
       },
     });
   },

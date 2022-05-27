@@ -15,6 +15,11 @@ export default [
         name: 'volume',
         component: './house/volume',
       },
+      {
+        path: '/house/table',
+        name: 'table',
+        component: './house/volume_table',
+      },
     ],
   },
   {
