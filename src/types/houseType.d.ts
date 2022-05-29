@@ -1,6 +1,7 @@
 import { Merge } from '@/types/basic';
 import { TFormData } from '@/types/dns';
 import React from 'react';
+import ex from 'umi/dist';
 
 /**
  *  Whois查询 - 开放查询IP网段设置 - TypeScript
@@ -32,8 +33,30 @@ export type TableData = API.TableResponseData & {
   list?: ITableItem[];
 };
 
-// 表单数据时
-export type SubmitFormData = Merge<TFormData, {
-  id?: React.Key;
-}>
+export declare type TCheckedList =
+  | 'centerNew'
+  | 'townNew'
+  | 'centerSecond'
+  | 'townSecond';
 
+export declare type TStatisticType = 'count' | 'area' | 'averageArea';
+
+export interface IChartDataItem extends ITableItem {
+  averageArea: number;
+}
+
+export interface IChartData {
+  date: string[];
+  centerNew: IChartDataItem[];
+  townNew: IChartDataItem[];
+  centerSecond: IChartDataItem[];
+  townSecond: IChartDataItem[];
+}
+
+// 表单数据时
+export type SubmitFormData = Merge<
+  TFormData,
+  {
+    id?: React.Key;
+  }
+>;
