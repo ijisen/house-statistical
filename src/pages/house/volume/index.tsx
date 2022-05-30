@@ -19,7 +19,7 @@ import {
   TableData,
   ITableItem,
   IChartData,
-  TCheckedList,
+  TCheckedList, IChartDataItem,
 } from '@/types/houseType.d';
 import { EnumDictKey } from '@/types/basic.d';
 
@@ -27,8 +27,12 @@ import { EnumDictKey } from '@/types/basic.d';
 import ComponentTable from './_component/ComponentTable';
 import { numberDivide } from '@/utils/numberArithmetic';
 
-const initChartData = {
-  date: [],
+const initXAxisData: {
+  centerNew: IChartDataItem[];
+  townNew: IChartDataItem[];
+  centerSecond: IChartDataItem[];
+  townSecond: IChartDataItem[];
+} = {
   centerNew: [],
   townNew: [],
   centerSecond: [],
@@ -36,8 +40,8 @@ const initChartData = {
 };
 
 const buildChartData = (data: ITableItem[]) => {
-  const chartData: IChartData = { ...initChartData };
   const date = [];
+  const xAxisData = { ...initXAxisData };
   for (let i = 0, len = data.length; i < len; i++) {
     const item = data[i];
     const { districtType, houseType, area, count } = item;
@@ -47,38 +51,53 @@ const buildChartData = (data: ITableItem[]) => {
     switch (type) {
       case '11':
         // 城区-新房
-        chartData.centerNew.push({
+        xAxisData.centerNew.push({
           ...item,
+          name: '城区-新房',
+          type: 'centerNew',
           averageArea,
         });
         break;
       case '21':
         // 郊区-新房
-        chartData.townNew.push({
+        xAxisData.townNew.push({
           ...item,
+          name: '郊区-新房',
+          type: 'townNew',
           averageArea,
         });
         break;
       case '12':
         // 城区-二手
-        chartData.centerSecond.push({
+        xAxisData.centerSecond.push({
           ...item,
+          name: '城区-二手',
+          type: 'centerSecond',
           averageArea,
         });
         break;
       case '22':
         // 郊区-二手
-        chartData.townSecond.push({
+        xAxisData.townSecond.push({
           ...item,
+          name: '郊区-二手',
+          type: 'townSecond',
           averageArea,
         });
         break;
     }
   }
-  chartData.date = [...new Set(date)];
-  return chartData;
+  return {
+    date: [...new Set(date)],
+    xAxisData: {
+      ...xAxisData,
+    },
+  };
 };
-
+const initChartData = {
+  date: [],
+  xAxisData: { ...initXAxisData },
+};
 const PageContent: FC = (props) => {
   const { formatMessage } = useIntl();
   const [tableData, setTableData] = useState<TableData>({});
@@ -107,13 +126,13 @@ const PageContent: FC = (props) => {
         let { success, message, data } = assertObject(res)
           ? res
           : {
-              success: false,
-              message: formatMessage({ id: 'message.http.get.error' }),
-              data: {
-                list: [],
-              },
-            };
-        if (!success) {
+            success: false,
+            message: formatMessage({ id: 'message.http.get.error' }),
+            data: {
+              list: [],
+            },
+          };
+        if(!success) {
           $Message.error(message);
         }
         setTableData({

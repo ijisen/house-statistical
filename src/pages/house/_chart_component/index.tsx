@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { Card } from 'antd';
 
 // 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
@@ -12,6 +12,7 @@ import {
   ToolboxComponent,
   GridComponent,
   DatasetComponent,
+  DataZoomComponent,
   TransformComponent,
   LegendComponent,
 } from 'echarts/components';
@@ -28,6 +29,7 @@ echarts.use([
   ToolboxComponent,
   GridComponent,
   DatasetComponent,
+  DataZoomComponent,
   TransformComponent,
   BarChart,
   LineChart,
@@ -37,31 +39,53 @@ echarts.use([
   LegendComponent,
 ]);
 
-class Properties<T, U> {}
+class Properties<T, U> {
+}
+
+interface IChartData {
+  xAxisData: any[];
+  legend: { [propName: string]: any };
+  seriesData: any[];
+}
 
 interface PageInit {
   id: string;
   type: TStatisticType;
-  chartData: {
-    xAxisData: any[];
-    legend: any[];
-    seriesData: any[];
-  };
+  chartData: IChartData;
   timeStamp: number;
   style?: Properties<string | number, string & {}>;
 }
 
-const unit = {
-  count: '套',
-  area: '㎡',
-  averageArea: '㎡',
+const buildData = (chartData: IChartData) => {
+  const { seriesData } = chartData;
+  const color = ['#fac858', '#ee6666', '#5470c6', '#91cc75', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'];
+  const data = seriesData.map((item, index) => {
+    return {
+      name: item.name,
+      type: 'line',
+      smooth: true,
+      color: color[index],
+      tooltip: {
+        valueFormatter: function(value: any) {
+          return value + ` ${item.unit}`;
+        },
+      },
+      data: item.data,
+    };
+  });
+  console.log(data);
+  return data;
 };
 
-const Index: FC<PageInit> = ({ id, type, chartData, timeStamp, style }) => {
+const Index: FC<PageInit> = ({
+                               id, type,
+                               chartData,
+                               timeStamp,
+                               style,
+                             }) => {
   useEffect(() => {
     // 接下来的使用就跟之前一样，初始化图表，设置配置项
-    const myChart = echarts.init(document.getElementById(id) as HTMLElement);
-    console.log(chartData);
+    const myChart = (echarts.init(document.getElementById(id) as HTMLElement));
     myChart.setOption({
       grid: {
         top: 50,
@@ -69,12 +93,21 @@ const Index: FC<PageInit> = ({ id, type, chartData, timeStamp, style }) => {
         bottom: 30,
         left: '7%',
       },
+      dataZoom: [
+        {
+          type: 'inside',
+        },
+      ],
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-          type: 'cross',
+          // type: 'cross',
+          type: 'shadow',
           crossStyle: {
             color: '#999',
+          },
+          shadowStyle: {
+            color: 'rgba(150,150,150,0.3)',
           },
         },
       },
@@ -84,13 +117,13 @@ const Index: FC<PageInit> = ({ id, type, chartData, timeStamp, style }) => {
         feature: {
           dataView: { show: true, readOnly: false },
           magicType: { show: true, type: ['line', 'bar'] },
-          restore: { show: true },
+          // restore: { show: true },
           saveAsImage: { show: true },
         },
       },
       legend: {
         top: 10,
-        // data: chartData.legend,
+        ...chartData.legend,
       },
       xAxis: [
         {
@@ -103,21 +136,11 @@ const Index: FC<PageInit> = ({ id, type, chartData, timeStamp, style }) => {
           type: 'value',
         },
       ],
-      series: chartData.legend.map((item, index) => {
-        return {
-          name: item,
-          type: 'bar',
-          smooth: true,
-          tooltip: {
-            valueFormatter: function (value: any) {
-              return value + ` ${unit[type]}`;
-            },
-          },
-          data: chartData.seriesData[index],
-        };
-      }),
+      series: buildData(chartData),
     });
+    // console.log(myChart.getOption());
   }, [timeStamp]);
+
   return (
     <div id={id} style={style}>
       &nbsp;

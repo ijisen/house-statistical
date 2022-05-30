@@ -3,7 +3,6 @@ import { Card } from 'antd';
 
 import {
   IChartData,
-  ITableItem,
   TCheckedList,
   TStatisticType,
 } from '@/types/houseType.d';
@@ -18,34 +17,68 @@ interface PageInit {
 }
 
 const buildChartData = (
-  data: IChartData,
   type: TStatisticType,
   checkedList: TCheckedList[],
+  data: IChartData,
 ) => {
-  const newData = { ...data };
+  const {
+    date,
+    xAxisData,
+  } = { ...data };
   // type 'count' | 'area' | 'averageArea'
-  const legend: any[] = [];
+  const selectedLegend: { [propName: string]: any } = {};
   const seriesData: any[] = [];
-  checkedList.map((item) => {
-    switch (item) {
+  checkedList.map((value) => {
+    switch (value) {
       case 'centerNew':
-        legend.push('城区-新房');
+        selectedLegend['城区-新房'] = true;
         break;
       case 'centerSecond':
-        legend.push('城区-二手');
+        selectedLegend['城区-二手'] = true;
         break;
       case 'townNew':
-        legend.push('郊区-新房');
+        selectedLegend['郊区-新房'] = true;
         break;
       case 'townSecond':
-        legend.push('郊区-二手');
+        selectedLegend['郊区-二手'] = true;
         break;
     }
-    seriesData.push(newData[item].map((item) => item[type]));
   });
+
+  Object.values(xAxisData).forEach((dataItem) => {
+    const unit = {
+      count: '套',
+      area: '㎡',
+      averageArea: '㎡',
+    };
+
+    const series: {
+      name: string;
+      unit: string;
+      data: any[]
+    } = {
+      name: '',
+      unit: unit[type],
+      data: [],
+    };
+    dataItem.map((item) => {
+      series.name = item.name;
+      series.data.push(item[type]);
+    });
+    seriesData.push(series);
+  });
+
   return {
-    xAxisData: data.date,
-    legend,
+    xAxisData: date,
+    legend: {
+      selected: {
+        '城区-新房': false,
+        '城区-二手': false,
+        '郊区-新房': false,
+        '郊区-二手': false,
+        ...selectedLegend,
+      },
+    },
     seriesData,
   };
 };
@@ -53,7 +86,7 @@ const buildChartData = (
 const Index: FC<PageInit> = ({ type, checkedList, chartData }) => {
   const [data, setData] = useState<{
     xAxisData: any[];
-    legend: any[];
+    legend: { [propName: string]: any };
     seriesData: any[];
   }>({
     xAxisData: [],
@@ -62,25 +95,20 @@ const Index: FC<PageInit> = ({ type, checkedList, chartData }) => {
   });
   const [timeStamp, setTimeStamp] = useState(0);
   useEffect(() => {
-    console.log(checkedList);
-    console.log(111111111111);
-    console.log(buildChartData(chartData, type, checkedList));
     setData({
-      ...buildChartData(chartData, type, checkedList),
+      ...buildChartData(type, checkedList, chartData),
     });
     setTimeStamp(moment().valueOf());
   }, [checkedList]);
   return (
     <Card bodyStyle={{ padding: 0 }}>
-      <ChartBar
-        id={type}
-        type={type}
-        chartData={data}
-        timeStamp={timeStamp}
-        style={{ width: '100%', height: '300px' }}
-      >
-        &nbsp;
-      </ChartBar>
+      {
+        timeStamp && (<ChartBar id={type}
+                                type={type}
+                                chartData={data}
+                                timeStamp={timeStamp}
+                                style={{ width: '100%', height: '300px' }}>&nbsp;</ChartBar>)
+      }
     </Card>
   );
 };

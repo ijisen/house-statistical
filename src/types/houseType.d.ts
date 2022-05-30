@@ -1,7 +1,6 @@
 import { Merge } from '@/types/basic';
 import { TFormData } from '@/types/dns';
 import React from 'react';
-import ex from 'umi/dist';
 
 /**
  *  Whois查询 - 开放查询IP网段设置 - TypeScript
@@ -42,15 +41,19 @@ export declare type TCheckedList =
 export declare type TStatisticType = 'count' | 'area' | 'averageArea';
 
 export interface IChartDataItem extends ITableItem {
+  name: string;
+  type: TCheckedList;
   averageArea: number;
 }
 
 export interface IChartData {
   date: string[];
-  centerNew: IChartDataItem[];
-  townNew: IChartDataItem[];
-  centerSecond: IChartDataItem[];
-  townSecond: IChartDataItem[];
+  xAxisData: {
+    centerNew: IChartDataItem[];
+    townNew: IChartDataItem[];
+    centerSecond: IChartDataItem[];
+    townSecond: IChartDataItem[];
+  }
 }
 
 // 表单数据时
