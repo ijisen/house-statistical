@@ -15,7 +15,7 @@ export default {
     res.send({
       success: true,
       code: 1000,
-      message: '请求 成功',
+      message: '请求成功',
       timestamp: 1648517225939,
       data: {
         pageNumber: 1,
