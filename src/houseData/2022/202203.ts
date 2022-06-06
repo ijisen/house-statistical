@@ -115,4 +115,3 @@ export default [
   { date: '2022-03-31', districtType: 1, houseType: 2, count: 519, area: 47060.66 },
   { date: '2022-03-31', districtType: 2, houseType: 2, count: 76, area: 7351.71 },
 ];
-

@@ -11,6 +11,7 @@ import ChartBar from '@/pages/house/_chart_component';
 import moment from 'moment';
 
 interface PageInit {
+  title: string;
   type: TStatisticType;
   checkedList: TCheckedList[];
   chartData: IChartData;
@@ -83,7 +84,7 @@ const buildChartData = (
   };
 };
 
-const Index: FC<PageInit> = ({ type, checkedList, chartData }) => {
+const Index: FC<PageInit> = ({ title, type, checkedList, chartData }) => {
   const [data, setData] = useState<{
     xAxisData: any[];
     legend: { [propName: string]: any };
@@ -101,7 +102,9 @@ const Index: FC<PageInit> = ({ type, checkedList, chartData }) => {
     setTimeStamp(moment().valueOf());
   }, [checkedList]);
   return (
-    <Card bodyStyle={{ padding: 0 }}>
+    <Card bodyStyle={{ padding: 0 }}
+          className="mbm"
+          title={title}>
       {
         timeStamp && (<ChartBar id={type}
                                 type={type}

@@ -191,18 +191,21 @@ const PageContent: FC = (props) => {
           <>
             {/* 成交量 */}
             <ComponentTable
+              title="套数"
               type="count"
               checkedList={checkedList}
               chartData={chartData}
             />
             {/* 总面积 */}
             <ComponentTable
+              title="总面积"
               type="area"
               checkedList={checkedList}
               chartData={chartData}
             />
             {/* 平均面积 */}
             <ComponentTable
+              title="平均面积"
               type="averageArea"
               checkedList={checkedList}
               chartData={chartData}

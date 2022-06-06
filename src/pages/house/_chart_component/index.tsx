@@ -58,7 +58,12 @@ interface PageInit {
 
 const buildData = (chartData: IChartData) => {
   const { seriesData } = chartData;
-  const color = ['#fac858', '#ee6666', '#5470c6', '#91cc75', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'];
+  const color = [
+    '#3ba272', '#5470c6',
+    '#ee6666', '#91cc75',
+    '#73c0de', '#fac858',
+    '#fc8452', '#9a60b4',
+    '#ea7ccc'];
   const data = seriesData.map((item, index) => {
     return {
       name: item.name,
