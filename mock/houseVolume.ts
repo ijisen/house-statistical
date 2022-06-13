@@ -7,6 +7,7 @@ import { Request, Response } from 'express';
 import houseData from '../src/houseData';
 
 const tableListData = () => {
+
   return houseData.map((item, index) => ({ id: index, ...item }));
 };
 export default {
