@@ -267,28 +267,28 @@ export default [
   },
 
   {
-    date: '2022-06-14',
+    date: '2022-06-15',
     districtType: 1,
     houseType: 1,
     count: 388,
     area: 53653.06,
   },
   {
-    date: '2022-06-14',
+    date: '2022-06-15',
     districtType: 2,
     houseType: 1,
     count: 139,
     area: 15554.15,
   },
   {
-    date: '2022-06-14',
+    date: '2022-06-15',
     districtType: 1,
     houseType: 2,
     count: 743,
     area: 70752.23,
   },
   {
-    date: '2022-06-14',
+    date: '2022-06-15',
     districtType: 2,
     houseType: 2,
     count: 119,
