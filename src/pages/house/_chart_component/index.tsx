@@ -68,7 +68,7 @@ const buildData = (chartData: IChartData) => {
     return {
       name: item.name,
       type: 'line',
-      smooth: true,
+      // smooth: true,
       color: color[index],
       tooltip: {
         valueFormatter: function(value: any) {
