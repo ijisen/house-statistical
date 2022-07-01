@@ -6,11 +6,13 @@ import march from './202203';
 import april from './202204';
 import may from './202205';
 import june from './202206';
+import july from './202207';
 
 export default [
   ...march,
   ...april,
   ...may,
   ...june,
+  ...july,
 ];
 
