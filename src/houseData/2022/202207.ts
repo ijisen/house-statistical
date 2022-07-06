@@ -20,4 +20,9 @@ export default [
   { date: '2022-07-05', districtType: 1, houseType: 2, count: 688, area: 62825.76 },
   { date: '2022-07-05', districtType: 2, houseType: 2, count: 98, area: 9391.7 },
 
+  { date: '2022-07-06', districtType: 1, houseType: 1, count: 311, area: 41455.58 },
+  { date: '2022-07-06', districtType: 2, houseType: 1, count: 100, area: 10799.63 },
+  { date: '2022-07-06', districtType: 1, houseType: 2, count: 710, area: 64902.86 },
+  { date: '2022-07-06', districtType: 2, houseType: 2, count: 94, area: 9553.35 },
+
 ];
