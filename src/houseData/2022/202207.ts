@@ -81,9 +81,9 @@ export default [
   { date: '2022-07-21', districtType: 2, houseType: 2, count: 83, area: 8391.96 },
 
 
-  { date: '2022-07-21', districtType: 1, houseType: 1, count: 493, area: 65104.62 },
-  { date: '2022-07-21', districtType: 2, houseType: 1, count: 110, area: 12387.3 },
-  { date: '2022-07-21', districtType: 1, houseType: 2, count: 637, area: 58303.08 },
-  { date: '2022-07-21', districtType: 2, houseType: 2, count: 102, area: 10020.81 },
+  { date: '2022-07-22', districtType: 1, houseType: 1, count: 493, area: 65104.62 },
+  { date: '2022-07-22', districtType: 2, houseType: 1, count: 110, area: 12387.3 },
+  { date: '2022-07-22', districtType: 1, houseType: 2, count: 637, area: 58303.08 },
+  { date: '2022-07-22', districtType: 2, houseType: 2, count: 102, area: 10020.81 },
 
 ];
