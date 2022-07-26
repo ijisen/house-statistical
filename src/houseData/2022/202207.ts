@@ -80,16 +80,19 @@ export default [
   { date: '2022-07-21', districtType: 1, houseType: 2, count: 652, area: 61525.04 },
   { date: '2022-07-21', districtType: 2, houseType: 2, count: 83, area: 8391.96 },
 
-
   { date: '2022-07-22', districtType: 1, houseType: 1, count: 493, area: 65104.62 },
   { date: '2022-07-22', districtType: 2, houseType: 1, count: 110, area: 12387.3 },
   { date: '2022-07-22', districtType: 1, houseType: 2, count: 637, area: 58303.08 },
   { date: '2022-07-22', districtType: 2, houseType: 2, count: 102, area: 10020.81 },
 
-
   { date: '2022-07-25', districtType: 1, houseType: 1, count: 877, area: 111515.83 },
   { date: '2022-07-25', districtType: 2, houseType: 1, count: 99, area: 10965.42 },
   { date: '2022-07-25', districtType: 1, houseType: 2, count: 784, area: 73249.95 },
   { date: '2022-07-25', districtType: 2, houseType: 2, count: 138, area: 15289.4 },
+
+  { date: '2022-07-26', districtType: 1, houseType: 1, count: 569, area: 71519.46 },
+  { date: '2022-07-26', districtType: 2, houseType: 1, count: 104, area: 11562.42 },
+  { date: '2022-07-26', districtType: 1, houseType: 2, count: 623, area: 58522.77 },
+  { date: '2022-07-26', districtType: 2, houseType: 2, count: 83, area: 9194.69 },
 
 ];
