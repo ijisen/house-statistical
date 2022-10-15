@@ -5,7 +5,7 @@
  * */
 
 export default [
-  { date: '2022-10-08', districtType: 1, houseType: 1, count: 296, area: 4261.04 },
+  { date: '2022-10-08', districtType: 1, houseType: 1, count: 296, area: 42461.04 },
   { date: '2022-10-08', districtType: 2, houseType: 1, count: 91, area: 9978.63 },
   { date: '2022-10-08', districtType: 1, houseType: 2, count: 538, area: 52195.33 },
   { date: '2022-10-08', districtType: 2, houseType: 2, count: 113, area: 10678.49 },
@@ -30,9 +30,14 @@ export default [
   { date: '2022-10-12', districtType: 1, houseType: 2, count: 534, area: 50699.47 },
   { date: '2022-10-12', districtType: 2, houseType: 2, count: 93, area: 520.14 },
 
-  { date: '2022-10-12', districtType: 1, houseType: 1, count: 389, area: 53024.17 },
-  { date: '2022-10-12', districtType: 2, houseType: 1, count: 111, area: 12344.7 },
-  { date: '2022-10-12', districtType: 1, houseType: 2, count: 565, area: 54371.02 },
-  { date: '2022-10-12', districtType: 2, houseType: 2, count: 98, area: 10096.85 },
+  { date: '2022-10-13', districtType: 1, houseType: 1, count: 389, area: 53024.17 },
+  { date: '2022-10-13', districtType: 2, houseType: 1, count: 111, area: 12344.7 },
+  { date: '2022-10-13', districtType: 1, houseType: 2, count: 565, area: 54371.02 },
+  { date: '2022-10-13', districtType: 2, houseType: 2, count: 98, area: 10096.85 },
+
+  { date: '2022-10-14', districtType: 1, houseType: 1, count: 412, area: 54430.38 },
+  { date: '2022-10-14', districtType: 2, houseType: 1, count: 128, area: 13802.08 },
+  { date: '2022-10-14', districtType: 1, houseType: 2, count: 584, area: 53591.46 },
+  { date: '2022-10-14', districtType: 2, houseType: 2, count: 112, area: 10963.97 },
 
 ];
