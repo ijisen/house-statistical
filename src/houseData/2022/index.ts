@@ -8,8 +8,9 @@ import may from './202205';
 import june from './202206';
 import july from './202207';
 import aug from './202208';
-import september  from './202209';
+import september from './202209';
 import october from './202210';
+import november from './202211';
 
 export default [
   ...march,
@@ -19,6 +20,7 @@ export default [
   ...july,
   ...aug,
   ...september,
-    ...october
+  ...october,
+  ...november,
 ];
 
