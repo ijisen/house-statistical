@@ -23,6 +23,11 @@ export default [
     ],
   },
   {
+    path: '/electric',
+    name: 'electric',
+    component: './electric',
+  },
+  {
     path: '/exception',
     name: 'exception',
     routes: [

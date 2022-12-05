@@ -8,6 +8,8 @@ export default {
   'menu.house.volume': '成交量',
   'menu.house.table': 'Table',
 
+  'menu.electric': '家电',
+
   'menu.exception.403': '403',
   'menu.exception.404': '404',
   'menu.exception.500': '500',

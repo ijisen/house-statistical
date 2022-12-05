@@ -8,6 +8,8 @@ export default {
   'menu.house.volume': 'Volume',
   'menu.house.table': 'Table',
 
+  'menu.electric': 'electric',
+
   'menu.exception.403': '403',
   'menu.exception.404': '404',
   'menu.exception.500': '500',
