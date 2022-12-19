@@ -65,9 +65,9 @@ export default [
   { date: '2022-09-29', districtType: 1, houseType: 2, count: 426, area: 40910.76 },
   { date: '2022-09-29', districtType: 2, houseType: 2, count: 110, area: 11376.61 },
 
-  { date: '2022-09-30', districtType: 1, houseType: 1, count: 264, area: 34900.97 },
-  { date: '2022-09-30', districtType: 2, houseType: 1, count: 189, area: 18030.82 },
-  { date: '2022-09-30', districtType: 1, houseType: 2, count: 384, area: 38008.89 },
-  { date: '2022-09-30', districtType: 2, houseType: 2, count: 87, area: 9196.59 },
+  { date: '2022-09-30', districtType: 1, houseType: 1, count: 264, area: 34900.97, desc: '房贷利率降为4.3; 公积金3.1' },
+  { date: '2022-09-30', districtType: 2, houseType: 1, count: 189, area: 18030.82, desc: '房贷利率降为4.3; 公积金3.1' },
+  { date: '2022-09-30', districtType: 1, houseType: 2, count: 384, area: 38008.89, desc: '房贷利率降为4.3; 公积金3.1' },
+  { date: '2022-09-30', districtType: 2, houseType: 2, count: 87, area: 9196.59, desc: '房贷利率降为4.3; 公积金3.1' },
 
 ];

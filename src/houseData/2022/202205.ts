@@ -100,9 +100,9 @@ export default [
   { date: '2022-05-30', districtType: 1, houseType: 2, count: 526, area: 49886.35 },
   { date: '2022-05-30', districtType: 2, houseType: 2, count: 87, area: 10110.6 },
 
-  { date: '2022-05-31', districtType: 1, houseType: 1, count: 612, area: 77432.30 },
-  { date: '2022-05-31', districtType: 2, houseType: 1, count: 103, area: 11528.65 },
-  { date: '2022-05-31', districtType: 1, houseType: 2, count: 395, area: 37496.09 },
-  { date: '2022-05-31', districtType: 2, houseType: 2, count: 72, area: 6948.95 },
+  { date: '2022-05-31', districtType: 1, houseType: 1, count: 612, area: 77432.30, desc: '限售由5年调整为2年，社保购房资格由2年变为1年' },
+  { date: '2022-05-31', districtType: 2, houseType: 1, count: 103, area: 11528.65, desc: '限售由5年调整为2年，社保购房资格由2年变为1年' },
+  { date: '2022-05-31', districtType: 1, houseType: 2, count: 395, area: 37496.09, desc: '限售由5年调整为2年，社保购房资格由2年变为1年' },
+  { date: '2022-05-31', districtType: 2, houseType: 2, count: 72, area: 6948.95, desc: '限售由5年调整为2年，社保购房资格由2年变为1年' },
 ];
 
